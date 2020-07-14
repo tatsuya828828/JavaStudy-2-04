@@ -23,4 +23,28 @@ public class Hero {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	// 正しい判定が行われるようにequalsをオーバーライド
+	public boolean equals(Object o) {
+		if(this == o) {
+			return true;
+		} else if(o instanceof Hero) {
+			Hero h = (Hero) o;
+			if(this.name == h.name) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public int hashCode() {
+		// 適当な初期値を決める(0以外の数字であればなんでも良い)
+		int result = 37;
+		// 各フィールドの影響を加える
+		// ここでの乗数は、奇数かつ素数である31がよく用いられる
+		result = result * 31 + name.hashCode();
+		result = result * 31 + hp;
+		// 結果を返す
+		return result;
+	}
 }
