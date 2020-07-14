@@ -19,4 +19,8 @@ public class Hero {
 	public String toString() {
 		return "名前:"+ this.name +"/HP:"+ this.hp +"/MP:"+ this.mp;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
