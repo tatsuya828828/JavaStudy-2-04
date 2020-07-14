@@ -1,16 +1,14 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import job.Account;
+import job.Hero;
 
 public class Main {
 	public static void main(String[] args) {
-		List<Account> list = new ArrayList<>();
-		// sortメソッドを用いると要素を並び替えることができる
-		// しかし何を基準にして並び替えるのかを定義しておかなければエラーが発生する
-		// なので、クラスに自然順序付けを定義する
-		// 自然順序付とは、一般的に想定される並べ順のこと
-		Collections.sort(list);
+		Hero h1 = new Hero("ミナト");
+		Hero h2 = h1.clone();
+		System.out.println("勇者1:"+ h1.toString());
+		System.out.println("勇者2:"+ h2.toString());
+		h1.setSword("勇者の剣", 100);
+		System.out.println("勇者1に勇者の剣を装備しました");
+		System.out.println("勇者1:"+ h1.toString());
+		System.out.println("勇者2:"+ h2.toString());
 	}
 }
